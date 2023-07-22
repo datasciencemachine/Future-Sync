@@ -3,6 +3,10 @@ from redis_functions import get_redis_client, set_state, get_state
 
 app = Flask(__name__)
 
+@app.route('/')
+def hello_world():
+	return 'Hello World!'
+
 @app.route("/post", methods=["POST"])
 def post():
     house_id = request.json["houseId"]
